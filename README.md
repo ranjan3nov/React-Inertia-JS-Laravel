@@ -13,8 +13,7 @@ Laravel new YourAppName
 2. **Install InertiaJS**
 
 ```bash
-composer reqcomposer require inertiajs/inertia-laravel
-uire
+composer require composer require inertiajs/inertia-laravel
 ```
 
 3. **Create app.blade.php and copy the syntax from official documention andd this line**
@@ -38,11 +37,9 @@ php artisan inertia:middleware
 > _Once the middleware has been published, register the HandleInertiaRequests middleware in your App\Http\Kernel as the last item in your web middleware group._
 
 > 'web' => [
-
     // ...
     \App\Http\Middleware\HandleInertiaRequests::class,
-
-],
+>    ],
 
 6. **Install necessary NPM packages:**
 
