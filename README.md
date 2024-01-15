@@ -13,7 +13,7 @@ Laravel new YourAppName
 2. **Install InertiaJS**
 
 ```bash
-composer require composer require inertiajs/inertia-laravel
+composer require inertiajs/inertia-laravel
 ```
 
 3. **Create app.blade.php and copy the syntax from official documention andd this line**
