@@ -86,7 +86,7 @@ export default Index;
 10. **Install InertiaJS React package:**
 
 ```bash
-Install InertiaJS React package:
+npm install @inertiajs/react
 ```
 
 11. **Create a route using Inertia in web.php file.**
