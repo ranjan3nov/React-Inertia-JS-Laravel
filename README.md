@@ -16,17 +16,30 @@ Laravel new YourAppName
 composer require inertiajs/inertia-laravel
 ```
 
-3. **Create app.blade.php and copy the syntax from official documention andd this line**
+3. **Create app.blade.php and paste the following**
 
 ```blade
-@viteReactRefresh
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        @viteReactRefresh
+        @vite('resources/js/app.jsx')
+        @inertiaHead
+      </head>
+      <body>
+        @inertia
+      </body>
+    </html>
 ```
 
-4. **Delete this unecessary file**
+4. **Modify the following**
 
 > Delete resources/views/welcome.blade.php
 
 > Delete public/js/bootstrap.js
+
 
 5. **Create a middleware and register it**
 
@@ -36,10 +49,12 @@ php artisan inertia:middleware
 
 > _Once the middleware has been published, register the HandleInertiaRequests middleware in your App\Http\Kernel as the last item in your web middleware group._
 
-> 'web' => [
-    // ...
-    \App\Http\Middleware\HandleInertiaRequests::class,
->    ],
+```php
+    'web' => [
+        // ...
+      \App\Http\Middleware\HandleInertiaRequests::class,
+        ],
+```
 
 6. **Install necessary NPM packages:**
 
