@@ -38,7 +38,7 @@ composer require inertiajs/inertia-laravel
 
 > Delete resources/views/welcome.blade.php
 
-> Delete public/js/bootstrap.js
+> Delete resources/js/bootstrap.js
 
 
 5. **Create a middleware and register it**
@@ -66,12 +66,32 @@ npm i @inertiajs/react @vitejs/plugin-react react react-dom
 
 _Vite React plugin documentation_
 
+> https://www.npmjs.com/package/@vitejs/plugin-react
+
+```php
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import react from '@vitejs/plugin-react'
+
+
+export default defineConfig({
+    plugins: [
+        react(),
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+    ],
+});
+
+```
+
 8. **Modify app.js to app.jsx:**
 
 ```jsx
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createInertiaApp } from "@inertiajs/inertia-react";
+import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
 createInertiaApp({
@@ -86,7 +106,7 @@ createInertiaApp({
 });
 ```
 
-9. **Create Pages/Index.jsx:**
+9. **Create resources/js/Pages/Index.jsx:**
 
 ```jsx
 import React from "react";
